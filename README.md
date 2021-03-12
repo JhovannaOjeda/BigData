@@ -1,2 +1,7 @@
-# BigData
-Here comes all the projects of the subject Massive Data by Jhovanna Ojeda and Daniel Garcia
+# Big Data
+Repository for Big Data subject
+
+### Unit 1
+- [Practice 1]()
+- [Practice 2]()
+- [Practice 3]()
