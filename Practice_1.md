@@ -38,42 +38,51 @@ Tijuana, Baja California, March 10, 2020. 
 ## 1. Desarrollar un algoritmo en scala que calcule el radio de un circulo
 
 Declaring the variable for the diameter
-
-`var diameter = 6`
+```scala
+var diameter = 6
+```
 
 Making a function to calculate radium
-
-`def CalculateRad(diameter:Int) = diameter/2`
-
+```scala
+def CalculateRad(diameter:Int) = diameter/2
+```
 Calling the function to calculate
-
-`CalculateRad(diameter)`
-
+```scala
+CalculateRad(diameter)
+```
 Returns 3
 
 ##  2. Desarrollar un algoritmo en scala que me diga si un numero es primo
 Declaring the variable for test
-
-`var x = 7`
+```scala
+var x = 7
+```
 
 Making a until-loop to verify that the mod is 0 otherwise we will have false value
-`def isPrime(x: Int) = (2 until x) forall (x % _ != 0)`
+```scala
+def isPrime(x: Int) = (2 until x) forall (x % _ != 0)
+```
 
 Executing the function
-`isPrime(x)`
+```scala
+isPrime(x)
+```
 
 ## 3. Dada la variable bird = "tweet", utiliza interpolacion de string para imprimir "Estoy ecribiendo un tweet"
 
 Declaring the variable tweet
-
-`var bird = "tweet"`
+```scala
+var bird = "tweet"
+```
 
 Declaring the variable sentence
-
-`var sentence = "Estoy escribiendo un"`
+```scala
+var sentence = "Estoy escribiendo un"
+```
 
 Interpolating strings
-
-`println(f"$sentence%s $bird")`
+```scala
+println(f"$sentence%s $bird")
+```
 
 Returns **Estoy escribiendo un tweet**
