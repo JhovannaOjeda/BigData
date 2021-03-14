@@ -35,7 +35,7 @@ Tijuana, Baja California, March 13, 2020. 
 </div>
 
 
-## Practice 3: Fibonacci algorithms
+## Practice 3: Fibonacci Algorithms
 
 **1.- Downstream Recursive Version**
 
@@ -59,7 +59,7 @@ Because it's a function, we need to call it and pass it the variable (this will 
 ```scala
 fib1(number)
 ```
-Returns **Int = 13**
+Returns: **Int = 13**
 
 **2.- Explicit Formula Version**
 
