@@ -63,6 +63,20 @@ Returns: **Int = 13**
 
 **2.- Explicit Formula Version**
 
+```scala
+def Fibonacci2(n:Double): Double = 
+	var p: Double = ((1 + scala.math.sqrt(5)) / 2)
+	var j: Double = ((scala.math.pow(p, n) - scala.math.pow((1 - p), n)) / scala.math.sqrt(5))
+	if(n < 2)
+	{
+		n
+	}
+	else
+	{
+		j
+	}
+}
+```
 
 
 **3.- Iterative Version**
@@ -83,7 +97,22 @@ return a
 
 **4.- Iterative Version: 2 variables**
 
+```scala
+def Fibonacci4(n:Int) : Int = {
+	var a = 0
+	var b = 1
+	var k = 0
 
+	while(k < n)
+	{
+		b = b + a
+		a = b - a
+
+		k = k + 1 
+	}
+	return a
+}
+```
 
 **5.- Iterative Version: Vector**
 
