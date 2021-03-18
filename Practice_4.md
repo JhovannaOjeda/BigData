@@ -99,3 +99,23 @@ Here is the application of the function to the list named "af"
 ```scala
 println(afortunado(af))
 ```
+### Third code block
+...
+
+```scala
+def balance(list:List[Int]): Boolean={
+    var primera = 0
+    var segunda = 0
+
+    segunda = list.sum
+
+    for(i <- Range(0,list.length)){
+        primera = primera + list(i)
+        segunda = segunda - list(i)
+
+        if(primera == segunda){
+            return true
+        }
+    }
+    return false 
+}
