@@ -52,7 +52,7 @@ val spark = SparkSession.builder().getOrCreate()
 To load the csv we use the following method, indicating that there is a header and providing the path of the file.
 ```scala
 //Load the csv
-val ndf = spark.read.option("header", "true").option("inferSchema","true")csv("C:\\Users\\Carlos Bojorquez\\Desktop\\Evaluacion_Unidad 1_Scala\\Netflix_2011_2016.csv")
+val ndf = spark.read.option("header", "true").option("inferSchema","true")csv("C:\\Users\\Daniel Garcia\\Desktop\\Evaluacion_1 1_Scala\\Netflix_2011_2016.csv")
 ```
 **3-. What are the column names?**
 
