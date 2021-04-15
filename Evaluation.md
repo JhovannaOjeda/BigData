@@ -6,7 +6,7 @@ Departamento de Ciencias y Computación
 
 Ingeniería en Sistemas Computacionales
 
- [![](https://www.tijuana.tecnm.mx/wp-content/themes/tecnm/images/logo_TECT.png)]
+ ![](https://www.tijuana.tecnm.mx/wp-content/themes/tecnm/images/logo_TECT.png)
 
 **Title:**
 Evaluation 
