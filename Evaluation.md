@@ -94,7 +94,7 @@ scala> ndf.select("Date", "Open", "High", "Low", "Close").show(1)
 
 only showing top 1 row
 
-**6-. Apply describe() to learn about the Data Frame:
+**6-. Apply describe() to learn about the Data Frame:**
 To make this, we just used describe method:
 ```scala
 ndf.describe()
@@ -114,7 +114,7 @@ ndf.describe().show()
 +-------+------------------+------------------+------------------+------------------+--------------------+------------------+
 ```
 
-**7-. Creates a new Data Frame with a new column called "HV Ratio" which is the relation between price from the column "High" and the column "Volume" from the actions negotiated in one day:
+**7-. Creates a new Data Frame with a new column called "HV Ratio" which is the relation between price from the column "High" and the column "Volume" from the actions negotiated in one day:**
 ```scala
 val ndf2 = ndf.withColumn("HV Ratio", ndf("High")/ndf("Volume"))
 ndf2: org.apache.spark.sql.DataFrame = [Date: timestamp, Open: double ... 6 more fields]
@@ -130,7 +130,7 @@ scala> ndf2.show(3)
 only showing top 3 rows
 ```
 
-**8-. Day that had the max value on the column "Close":`
+**8-. Day that had the max value on the column "Close":**
 Here we can look all the information that accompanies the higest value in the column "Close"
 ```scala
 ndf.orderBy($"Close".desc).show(1)
@@ -155,13 +155,13 @@ scala> ndfDes.select($"Date").show(1)
 only showing top 1 row
 ```
 
-**9-. Meaning of the column "Close":
+**9-. Meaning of the column "Close":**
 ```scala
 //We are talking about stock, actions and prices, then the column "Close" has to mean the price when the stock close for a day, if it's higer that the Open the 
 //it's a good news but if's not the Netflix lost.
 ```
 
-**10-. Max and min from the column "Volume":
+**10-. Max and min from the column "Volume":**
 ```scala
 ndf.select(max("Volume")).show()
 +-----------+
@@ -179,17 +179,17 @@ scala> ndf.select(min("Volume")).show()
 +-----------+
 ```
 **11-. Solve next:
-*11a) Count the days where the column "Close" where lower than $600:
+*a) Count the days where the column "Close" where lower than $600:*
 ```scala
 ndf.filter("Close<600").count()
 res6: Long = 1218
 ```
-*11b) Percent of time when the Close where higer than $500:
+*b) Percent of time when the Close where higer than $500:*
 ```scala
 (ndf.filter("High>500").count()*1.0/ndf.count())*100
 res24: Double = 4.924543288324067
 ```
-*11c) Pearson Correlation between High and Volume:
+*c) Pearson Correlation between High and Volume:*
 ```scala
  ndf.select(corr("High", "Close")).show()
 +------------------+
@@ -198,7 +198,7 @@ res24: Double = 4.924543288324067
 |0.9997471143113295|
 +------------------+
 ```
-*11d) Max per year of High:
+*d) Max per year of High:*
 ```scala
 val years = ndf.withColumn("Year",year(ndf("Date")))
 years: org.apache.spark.sql.DataFrame = [Date: timestamp, Open: double ... 6 more fields]
@@ -215,7 +215,7 @@ scala>   years.select("Year", "High").groupBy("Year").max("High").show()
 |2011|120.28000300000001|
 +----+------------------+
 ```
-*11e) Average per month of Close:
+*e) Average per month of Close:*
 ```scala
 val months = ndf.withColumn("Month", month(ndf("Date")))
 months: org.apache.spark.sql.DataFrame = [Date: timestamp, Open: double ... 6 more fields]
