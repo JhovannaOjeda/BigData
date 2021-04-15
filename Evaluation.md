@@ -178,3 +178,63 @@ scala> ndf.select(min("Volume")).show()
 |    3531300|
 +-----------+
 ```
+**11-. Solve next:
+*11a) Count the days where the column "Close" where lower than $600:
+```scala
+ndf.filter("Close<600").count()
+res6: Long = 1218
+```
+*11b) Percent of time when the Close where higer than $500:
+```scala
+(ndf.filter("High>500").count()*1.0/ndf.count())*100
+res24: Double = 4.924543288324067
+```
+*11c) Pearson Correlation between High and Volume:
+```scala
+ ndf.select(corr("High", "Close")).show()
++------------------+
+| corr(High, Close)|
++------------------+
+|0.9997471143113295|
++------------------+
+```
+*11d) Max per year of High:
+```scala
+val years = ndf.withColumn("Year",year(ndf("Date")))
+years: org.apache.spark.sql.DataFrame = [Date: timestamp, Open: double ... 6 more fields]
+
+scala>   years.select("Year", "High").groupBy("Year").max("High").show()
++----+------------------+
+|Year|         max(High)|
++----+------------------+
+|2015|        716.159996|
+|2013|        389.159988|
+|2014|        489.290024|
+|2012|        133.429996|
+|2016|129.28999299999998|
+|2011|120.28000300000001|
++----+------------------+
+```
+*11e) Average per month of Close:
+```scala
+val months = ndf.withColumn("Month", month(ndf("Date")))
+months: org.apache.spark.sql.DataFrame = [Date: timestamp, Open: double ... 6 more fields]
+
+scala>   months.select("Month", "Close").groupBy("Month").mean("Close").show()
++-----+------------------+
+|Month|        avg(Close)|
++-----+------------------+
+|   12| 199.3700942358491|
+|    1|212.22613874257422|
+|    6| 295.1597153490566|
+|    3| 249.5825228971963|
+|    5|264.37037614150944|
+|    9|206.09598121568627|
+|    4|246.97514271428562|
+|    8|195.25599892727263|
+|    7|243.64747528037387|
+|   10|205.93297300900903|
+|   11| 194.3172275445545|
+|    2| 254.1954634020619|
++-----+------------------+
+```
