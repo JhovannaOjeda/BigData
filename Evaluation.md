@@ -178,7 +178,7 @@ scala> ndf.select(min("Volume")).show()
 |    3531300|
 +-----------+
 ```
-**11-. Solve next:
+**11-. Solve next:**
 *a) Count the days where the column "Close" where lower than $600:*
 ```scala
 ndf.filter("Close<600").count()
