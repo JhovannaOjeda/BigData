@@ -95,6 +95,7 @@ scala> ndf.select("Date", "Open", "High", "Low", "Close").show(1)
 only showing top 1 row
 
 **6-. Apply describe() to learn about the Data Frame:**
+
 To make this, we just used describe method:
 ```scala
 ndf.describe()
@@ -131,6 +132,7 @@ only showing top 3 rows
 ```
 
 **8-. Day that had the max value on the column "Close":**
+
 Here we can look all the information that accompanies the higest value in the column "Close"
 ```scala
 ndf.orderBy($"Close".desc).show(1)
@@ -179,6 +181,7 @@ scala> ndf.select(min("Volume")).show()
 +-----------+
 ```
 **11-. Solve next:**
+
 *a) Count the days where the column "Close" where lower than $600:*
 ```scala
 ndf.filter("Close<600").count()
