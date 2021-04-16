@@ -6,7 +6,7 @@ Departamento de Ciencias y Computación
 
 Ingeniería en Sistemas Computacionales
 
- [![](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)
+ ![](https://www.tijuana.tecnm.mx/wp-content/themes/tecnm/images/logo_TECT.png)
 
 **Title:**
 Practice 4
@@ -100,7 +100,16 @@ Here is the application of the function to the list named "af"
 println(afortunado(af))
 ```
 ### Third code block
-...
+
+The following code block declares a function named "balance". This function will analyze a lists to see if the list is "balanced" between their values. First there is a declaration of two variables named "primera" and "segunda", these variables are for calculating if there is a balance between the values of the list. "Segunda" is equal to the sum of all the values in the list. The for cycle will start from 0 to the length of the list.
+
+to confirm the balance, the "segunda" list is decremented equal to each of the values in the list and the "primera" variable increases according to each value in the list
+
+"primera" is equal to the value of "primera" plus the value of the first variable in the list.
+
+"segunda" is equal to the value of "segunda" minus the value of the first variable in the list.
+
+If the value of "primera" is equal to "segunda" the function will return TRUE, otherwise the function will return FALSE
 
 ```scala
 def balance(list:List[Int]): Boolean={
@@ -119,3 +128,46 @@ def balance(list:List[Int]): Boolean={
     }
     return false 
 }
+```
+
+Here is the declaration of three different lists
+
+```scala
+val bl = List(3,2,1)
+val bl2 = List(2,3,3,2)
+val bl3 = List(10,30,90)
+```
+
+Here is the application of the function to the lists "bl", "bl2" and "bl3"
+
+```scala
+balance(bl)
+balance(bl2)
+balance(bl3)
+```
+
+
+### Fourth code block
+
+This code defines a function that needs to be declared with a word charged to the method. The function return the same word but in reverse, this will allow us to see if its a palindrome.
+
+```scala
+def palindromo(palabra:String):Boolean ={
+    return (palabra == palabra.reverse)
+}
+```
+
+Here is the declaration of three variables that are palindromes
+
+```scala
+val palabra = "OSO"
+val palabra2 = "ANNA"
+val palabra3 = "JUAN"
+```
+
+Here is the print of the function applied to the variables "palabra", "palabra2" and "palabra3", it will return the three words but in reverse. We can see that the words are written in the same way, that is because they palindromes.
+
+```scala
+println(palindromo(palabra))
+println(palindromo(palabra2))
+println(palindromo(palabra3))
