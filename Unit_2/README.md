@@ -1,5 +1,5 @@
 # Big Data
-Repository for Big Data subject
+Repository for Big Data
 
 ### Unit 2
 

@@ -39,7 +39,7 @@ Tijuana, Baja California, April 29, 2021. 
 
 **1. Correlation**
 
-//Import the libraries for Matrix, Vectors, Correlation and Rows
+Import the libraries for Matrix, Vectors, Correlation and Rows
 ```scala
 import org.apache.spark.ml.linalg.{Matrix, Vectors}
 import org.apache.spark.ml.stat.Correlation
@@ -74,6 +74,7 @@ println(s"Spearman correlation matrix:\n $coeff2")
 ```
 
 **2. Hypothesis Test**
+
 Import libraries
 ```scala
 import org.apache.spark.ml.linalg.{Vector, Vectors}
@@ -107,6 +108,7 @@ println(s"statistics ${chi.getAs[Vector](2)}")
 ```
 
 **3. Summarizer**
+
 Import libraries
 ```scala
 import spark.implicits._    
