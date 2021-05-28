@@ -96,3 +96,11 @@ data.printSchema()
 ```scala
 data.show(5)
 ```
+![](https://lh3.googleusercontent.com/pw/ACtC-3dFBzCCMfi76YQ4mLYbaXe7WDx-pziwQYRyW6v7YNcQwGNBv3Ep2tC7aDpQ64Vj7Yk44xoCQOf-hpKTacd9sxgOfTdx0DkPpqz6sBscAcJlMXcvnF6OmtrLn2-10d-WQYEqpEZI7HwHVDZRcLTiQGL-=w552-h233-no?authuser=1)
+
+### 5. Describe function
+```scala
+data.describe().show()
+```
+![](https://lh3.googleusercontent.com/pw/ACtC-3euyBfi9jBXgDxMVDUyAhcUcjOq2QrOSV2szA-p8Yb_c9Y21_xREbZd19x9tSkzEnCpRKd1mvVGJDAUWwQT47rbvt0aFRM0ij9-TOv-8S913BpTgidmh5aMotoMSckCHZc3pq74Ol3AF5prfMebDIaa=w902-h224-no?authuser=1)
+
