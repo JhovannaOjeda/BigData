@@ -1,0 +1,168 @@
+<div align="center">
+
+**Instituto Tecnológico de Tijuana**
+
+Departamento de Ciencias y Computación
+
+Ingeniería en Sistemas Computacionales
+
+ [![](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)
+
+**Title:**
+Basic Statistics
+
+**Subject:**
+BDD-1704 S DATOS MASIVOS
+
+**Unit:**
+ I
+
+**Professor:**
+JOSE CHRISTIAN ROMERO HERNANDEZ
+
+**Student:**
+
+Jhovanna Andrea Ojeda Sanchez
+15211334
+
+Garcia Rincon Daniel Gerardo
+16212002
+
+
+
+**Date:**
+Tijuana, Baja California, April 28 , 2020. 
+</div>
+
+
+//Empezamos con esta libreria para tener acceso a matrices locales y Métodos de fábrica para Vector.
+```scala
+import org.apache.spark.ml.linalg.{Matrix, Vectors}
+```
+//libreria para usar el metodo de correlacion
+```scala
+import org.apache.spark.ml.stat.Correlation
+```
+//permite acceder a un valor de una fila a través del acceso genérico por ordinal,  así como el acceso primitivo
+```scala
+import org.apache.spark.sql.Row
+```
+//Crea vectores densos y dispersos  a partir de sus valores, dentro de la matriz 
+```scala
+val data = Seq(
+   (4, Seq((0, 1.0), (3, -2.0))),
+  Vectors.dense(4.0, 5.0, 0.0, 3.0),
+  Vectors.dense(6.0, 7.0, 0.0, 8.0),
+  Vectors.sparse(4, Seq((0, 9.0), (3, 1.0)))
+)
+```
+
+//Se extraen los datos de nuestra matriz y se crea un dataframe respecto a las caracteristicas 
+```scala
+val df = data.map(Tuple1.apply).toDF("features")
+```
+//Se crea la matriz de correlacion Pearson usando el dataframe que acabamos de crear y le pedimos los primeros valores con head
+```scala
+val Row(coeff1: Matrix) = Correlation.corr(df, "features").head
+```
+//imprimimos el resultado
+```scala
+println(s"Pearson correlation matrix:\n $coeff1")
+```
+//Se crea la matriz de correlacion Spearman usando el dataframe que acabamos de crear y le pedimos los primeros valores con head
+```scala
+val Row(coeff2: Matrix) = Correlation.corr(df, "features", "spearman").head
+```
+//imprimimos el resultado
+```scala
+println(s"Spearman correlation matrix:\n $coeff2")
+```
+
+
+//Hypothesis testing
+
+
+//se hace uso de la siguiente libreria para aplicar metodos a vectores 
+
+```scala
+import org.apache.spark.ml.linalg.{Vector, Vectors}
+```
+//Tambien se utiliza la libreria de chiSquare para realizar los calculos necesarios
+```scala
+import org.apache.spark.ml.stat.ChiSquareTest
+```
+// se crea la siguiente secuencia de vectores densos 
+```scala
+
+val data = Seq(
+  (0.0, Vectors.dense(0.5, 10.0)),
+  (0.0, Vectors.dense(1.5, 20.0)),
+  (1.0, Vectors.dense(1.5, 30.0)),
+  (0.0, Vectors.dense(3.5, 30.0)),
+  (0.0, Vectors.dense(3.5, 40.0)),
+  (1.0, Vectors.dense(3.5, 40.0))
+)
+```
+//Creacion del dataframe a partir del conjunto de vectores anterior 
+```scala
+val df = data.toDF("label", "features")
+```
+//se toman los primeros valores del dataframe previamente creado
+```scala
+val chi = ChiSquareTest.test(df, "features", "label").head
+```
+//De inicio con las partes de la prueba, se buscaran los valores de p 
+```scala
+println(s"pValues = ${chi.getAs[Vector](0)}")
+```
+//Despues se buscaran los grados de libertad del modelo
+```scala
+println(s"degreesOfFreedom ${chi.getSeq[Int](1).mkString("[", ",", "]")}")
+```
+//por ultimo se extraeran ciertos valores de un vector dererminado todo en base a la funcion chi cuadrado
+
+```scala
+println(s"statistics ${chi.getAs[Vector](2)}")
+```
+
+//Summarizer
+
+//importacion de librerias necesarias, en este uso de vectores y el propio summarizer
+```scala
+
+import spark.implicits._    
+import Summarizer._
+```
+//se crea un conjunto de vectores o secuencia
+```scala
+
+val data = Seq(
+  (Vectors.dense(2.0, 3.0, 5.0), 1.0),
+  (Vectors.dense(4.0, 6.0, 7.0), 2.0)
+)
+```
+//Creacion del dataframe a partir de los vectores
+```scala
+
+val df = data.toDF("features", "weight")
+```
+
+//se hace uso de la libreria summarizer para obtener la media y la varianza de algunos datos en el dataframe solicitado
+```scala
+
+val (meanVal, varianceVal) = df.select(metrics("mean", "variance").summary($"features", $"weight").as("summary")).select("summary.mean", "summary.variance").as[(Vector, Vector)].first()
+```
+//se imprimen las variables trabajadas anteriormente
+```scala
+
+println(s"with weight: mean = ${meanVal}, variance = ${varianceVal}")
+```
+//se repite el procesos con 2 nuevas variables 
+```scala
+
+val (meanVal2, varianceVal2) = df.select(mean($"features"), variance($"features"))
+
+.as[(Vector, Vector)].first()
+
+println(s"without weight: mean = ${meanVal2}, sum = ${varianceVal2}")
+```
