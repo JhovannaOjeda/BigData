@@ -86,3 +86,13 @@ data.columns.seq
 ```
 ![](https://lh3.googleusercontent.com/pw/ACtC-3d9nrTtyPPRKsoOsIAFues5cqh4M-NqbTLvczwd3TasolOHATLfBrP-O0c-66mEGUxUTE3f07BI5vMBSlJW_Jk5lj_SlrekjqCp6DwFC6y4KrO3aRx7_1h2gkFNHdvB2XbTyDIsO5R2CG6vwWdiCG-1=w1168-h56-no?authuser=1)
 
+### 3. Scheme of the Dataframe
+```scala
+data.printSchema()
+```
+![](https://lh3.googleusercontent.com/pw/ACtC-3cdvvfLlxL_KUfmm6Vg3sgjqzqkTHaiovBNdtvp5o6c8bKvRvt_qm-JzQExQGZROiaHLO6SdiNNscLUtrzBQa-BG3kQOr5Bry8_-q7PHgMqxOOVbiIVeZfIcLkzpfhTgH86SUEOAy7EWvbmrVu1fTp7=w413-h156-no?authuser=1)
+
+### 4. First 5 rows of the Dataframe
+```scala
+data.show(5)
+```
