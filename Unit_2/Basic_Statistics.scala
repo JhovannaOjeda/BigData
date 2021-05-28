@@ -1,38 +1,4 @@
-<div align="center">
 
-**Instituto Tecnológico de Tijuana**
-
-Departamento de Ciencias y Computación
-
-Ingeniería en Sistemas Computacionales
-
- [![](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)](https://upload.wikimedia.org/wikipedia/commons/2/2e/ITT.jpg)
-
-**Title:**
-Basic Statistics
-
-**Subject:**
-BDD-1704 S DATOS MASIVOS
-
-**Unit:**
- I
-
-**Professor:**
-JOSE CHRISTIAN ROMERO HERNANDEZ
-
-**Student:**
-
-Jhovanna Andrea Ojeda Sanchez
-15211334
-
-Garcia Rincon Daniel Gerardo
-16212002
-
-
-
-**Date:**
-Tijuana, Baja California, April 28 , 2020. 
-</div>
 
 
 //Empezamos con esta libreria para tener acceso a matrices locales y Métodos de fábrica para Vector.
