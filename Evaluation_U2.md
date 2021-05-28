@@ -42,10 +42,9 @@ Tijuana, Baja California, May 28, 2021. 
 3. What is the scheme like?
 4. Print the first 5 columns.
 5. Use the describe () method to learn more about the data in the DataFrame.
-6. Make the relevant transformation for the categorical data which will be
-7. our labels to be classified.
-8. Build the classification model and explain its architecture.
-9. Print the model results
+6. Make the relevant transformation for the categorical data which will be our labels to be classified.
+7. Build the classification model and explain its architecture.
+8. Print theresults
 
 ## Development
 
