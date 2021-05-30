@@ -130,28 +130,39 @@ datif: org.apache.spark.sql.DataFrame = [sepal_length: double, sepal_width: doub
 ```
 
 ### 7. Multilayer Perceptron Classifier
+
+
+Split the data in 2 parts: 1 of 70% of the original data to train the program and the other to test it: 
 ```scala
-//Split the data in 2 parts: 1 of 70% of the original data to train the program and the other to test it
 val splits = dataif.randomSplit(Array(0.7, 0.3), seed = 1234L)
 splits: Array[org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]] = Array([sepal_length: double, sepal_width: double ... 5 more fields], [sepal_length: double, sepal_width: double ... 5 more fields])
+```
 
-//First one to train
+First one to train: 
+```scala
 val train = splits(0)
 train: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] = [sepal_length: double, sepal_width: double ... 5 more fields]
-
-//Second one to test
+```
+Second one to test: 
+```scala
 val test = splits(1)
 test: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] = [sepal_length: double, sepal_width: double ... 5 more fields]
+```
 
-//Layers for the Multilayer Perceptron
+Layers for trainer:
+```scala
 val layers = Array[Int](4, 5, 4, 3)
 layers: Array[Int] = Array(4, 5, 4, 3)
+```
 
-//Put everithing together int the trainer: layers, sie of the block, seed and the max number of iterations
+Put everithing together int the trainer: layers, sie of the block, seed and the max number of iterations:
+```scala
 val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
 trainer: org.apache.spark.ml.classification.MultilayerPerceptronClassifier = mlpc_ae7370c5eee6
+```
 
-//Train the model
+Train the model:
+```scala
 val model = trainer.fit(train)
 21/05/30 03:30:02 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
 21/05/30 03:30:02 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
@@ -163,7 +174,7 @@ model: org.apache.spark.ml.classification.MultilayerPerceptronClassificationMode
 ```
 
 ### 8. Print the results
-'''scala
+```scala
 val result = model.transform(test)
 result: org.apache.spark.sql.DataFrame = [sepal_length: double, sepal_width: double ... 8 more fields]
 
