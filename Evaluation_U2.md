@@ -103,7 +103,7 @@ data.describe().show()
 ```
 ![](https://lh3.googleusercontent.com/pw/ACtC-3euyBfi9jBXgDxMVDUyAhcUcjOq2QrOSV2szA-p8Yb_c9Y21_xREbZd19x9tSkzEnCpRKd1mvVGJDAUWwQT47rbvt0aFRM0ij9-TOv-8S913BpTgidmh5aMotoMSckCHZc3pq74Ol3AF5prfMebDIaa=w902-h224-no?authuser=1)
 
-### 6. Tranformation of the categoric data (labels to classifier)
+### 6. Transformation of the categorical data (labels to classifier)
 ```scala
 var labels = new StringIndexer().setInputCol("species").setOutputCol("label").fit(data)
 labels: org.apache.spark.ml.feature.StringIndexerModel = strIdx_1c7148e3303b
@@ -155,7 +155,7 @@ val layers = Array[Int](4, 5, 4, 3)
 layers: Array[Int] = Array(4, 5, 4, 3)
 ```
 
-Put everithing together int the trainer: layers, sie of the block, seed and the max number of iterations:
+Put everithing together int the trainer: layers, size of the block, seed and the max number of iterations:
 ```scala
 val trainer = new MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
 trainer: org.apache.spark.ml.classification.MultilayerPerceptronClassifier = mlpc_ae7370c5eee6
