@@ -9,6 +9,6 @@ Repository for Big Data subject
 - [Naive Bayes](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Unit_2/NaiveBayes.scala)
 - [One vs Rest](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Unit_2/OnevsRest.scala)
 - [Random Forest Classifier](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Unit_2/Random_forest_classifier.scala)
-- [Descicion Tree](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Unit_2/decisiontree.scala)
+- [Desicion Tree](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Unit_2/decisiontree.scala)
 - [Exam](https://github.com/JhovannaOjeda/BigData/blob/Unit_2/Evaluation_U2.md)
 - [Video Evaluation](https://www.youtube.com/watch?v=SmGB6mMIOZ4&t=60s&fbclid=IwAR0YUbRCmmMuMo-ZKLIKaLa0vOKmiWO4rvwh9U0RCLy3LDvhp0JRANRPBcM)
