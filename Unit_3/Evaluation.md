@@ -52,3 +52,25 @@ The goal of this hands-on test is to try to group customers from specific region
 9. Use the assembler object to transform feature_data
 10. Create a Kmeans model with K = 3
 11. Evaluate the groups using within the WSSSE Sum of Squared Errors set and print the centroids.
+
+
+## Development
+
+1. Import a simple Spark session.
+
+```scala
+import org.apache.spark.sql.SparkSession
+```
+
+2. Use lines of code to minimize errors
+
+```scala
+import org.apache.log4j._
+Logger.getLogger("org").setLevel(Level.ERROR)
+```
+
+3. Create an instance of the Spark session
+
+```scala
+val spark = SparkSession.builder().appName("LinearRegressionAssigment").getOrCreate()
+```
