@@ -74,3 +74,25 @@ Logger.getLogger("org").setLevel(Level.ERROR)
 ```scala
 val spark = SparkSession.builder().appName("LinearRegressionAssigment").getOrCreate()
 ```
+
+4. Import the K-means library for the cluster algorithm.
+
+```scala
+import org.apache.spark.ml.clustering.KMeans
+```
+
+5. Load the wholesale customer dataset
+
+```scala
+val data = spark.read.option("header", "true").option("inferSchema","true")csv("C:\\Users\\Donny\\Documents\\BigData\\Spark_clustering\\Wholesale_customers_data.csv")
+
+```
+
+6. Select the following columns: Fresh, Milk, Grocery, Frozen, Detergents_Paper, Delicassen and call this set feature_data
+
+```scala
+val  fd  = data.select("Fresh","Milk","Grocery","Frozen","Detergents_Paper","Delicassen")
+fd.show(5)
+```
+![image](https://user-images.githubusercontent.com/60414135/121989718-7130ca00-cd51-11eb-8d29-3f73700f8d8d.png)
+
