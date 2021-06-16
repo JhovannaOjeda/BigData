@@ -96,3 +96,44 @@ fd.show(5)
 ```
 ![image](https://user-images.githubusercontent.com/60414135/121989718-7130ca00-cd51-11eb-8d29-3f73700f8d8d.png)
 
+7. Import Vector Assembler
+
+```scala
+import org.apache.spark.ml.feature.VectorAssembler
+```
+
+8. Create a new Assembler Object from the features
+
+```scala
+val assembler = new VectorAssembler().setInputCols(Array("Fresh", "Milk", "Grocery", "Frozen", "Detergents_Paper", "Delicassen")).setOutputCol("features")
+```
+
+9. Transform the features_data
+
+```scala
+val features_datat = assembler.transform(features_data)
+```
+
+10. Create the model K-Means with K=3
+
+```scala
+val km = new KMeans().setK(3).setSeed(123L)
+val m = km.fit(features_datat)
+```
+
+11. Evalute the groups with Set Sum from WSSSE and print the centroids
+
+```scala
+val pre = m.transform(features_datat)
+val evaluator = new ClusteringEvaluator()
+val evaluation = evaluator.evaluate(pre)
+evaluation: Double = 0.6482181662567144
+println(s"Evaluation = $evaluation")
+Evaluation = 0.6482181662567144
+println("Cluster Centers: ")
+m.clusterCenters.foreach(println)
+[32768.013333333336,4827.68,5723.146666666667,5535.92,1074.1200000000001,2066.6400000000003]
+[7390.958456973294,4439.768545994066,6292.19584569733,2495.53412462908,2238.6528189910982,1158.4480712166173]
+[11849.17857142857,24717.10714285714,33887.71428571428,3409.3214285714284,15459.714285714284,4483.857142857142]
+```
+
