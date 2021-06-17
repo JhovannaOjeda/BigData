@@ -173,3 +173,6 @@ m.clusterCenters.foreach(println)
 [11849.17857142857,24717.10714285714,33887.71428571428,3409.3214285714284,15459.714285714284,4483.857142857142]
 ```
 
+## Link del Video
+
+https://www.youtube.com/watch?v=hAZaIioa1sw
