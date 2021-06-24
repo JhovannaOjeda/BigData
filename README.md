@@ -50,9 +50,10 @@ Support vector machine (SVM) is a supervised learning algorithm used in many cla
 A decision tree classifies data items by asking a series of questions about the features associated with the items. Each question is contained in a node and each internal node points to a child node for each possible answer to its question. The questions thus form a hierarchy, coded as a tree. In the simplest form, we ask yes or no questions, and each internal node has a "yes" child and a "no" child. An element is classified into a class by following the path from the top node, the root, to a childless node, a leaf, based on the answers that apply to the element under consideration. An element is assigned to the class that has been associated with the arriving leaf. 
 
 #### Logistic Regression
+Linear regression provides a powerful device for organizing data analysis. Researchers focus on explaining the dependent variable as a function of multiple independent variables. Everything goes well if all the conclusions are known but in this model it is possible that some are lost if the dependent variable has only 2 or 3 categories of result. The goal of the linear regression model is to predict a dependent variable from 1 or more predictors.
 
 #### Multilayer Perceptron
-
+The multilayer perceptron consists of multiple layers of nodes or neurons interconnected through well-defined connections; there is the lowest layer which is the input layer, followed by a series of hidden layers and finally the top layer which is the output layer. There is no interaction between layers while all neurons are connected to the adjacent layer; weight measures in degree of correlation in activity between layers.
 
 ## Implementation
 
@@ -82,9 +83,42 @@ In this Decision Tree method, the first run takes more time, its time was 14 sec
 #### Average
 ![image](https://user-images.githubusercontent.com/60414135/123190380-4b43ad80-d454-11eb-9fc4-84da5d968789.png)
 
+### Logistic Regression
+![image](https://user-images.githubusercontent.com/63790039/123191827-abd3ea00-d456-11eb-86f7-e1b8b01360f3.png)
+
+#### Average
+![image](https://user-images.githubusercontent.com/63790039/123191933-d45be400-d456-11eb-8638-7d353770341c.png)
+
+### Multilayer Perceptron Classifier
+![image](https://user-images.githubusercontent.com/63790039/123192060-079e7300-d457-11eb-8cd2-c3d2ffe3bb19.png)
+
+#### Average
+![image](https://user-images.githubusercontent.com/63790039/123192123-24d34180-d457-11eb-87b1-f733ee781c1d.png)
+
 ## Conclusions
 
 ### Jhovanna
+In my case as I used a loop to run the code several times from the use of the turn model, the steel and error were the same in each one, or at least that's my guess. Looking at the algorithms and comparing their results we observe that on average the percentage is practically the same in all the algorithms; so we can say that for this problem your choice is indifferent because everyone does the job equally well (just over 80% of correctness).
 
 ### Daniel
 It can be observed that the results of the assertiveness and error in the 4 methods were very similar varying between very low percentage and as for the percentage of error they coincide in the same way, in spite of being different processes and that it has been run in different equipment that did not affect so much as far as the optimization of the code in its execution.
+
+## Testing Team
+
+### Jhovanna
+- Processor: intel i3-2330M 2.20GHz
+- Memoria Ram: 4 GB
+- Operating System: Windows 10
+
+### Daniel
+- Processor: intel i5-7500 3.40 GHz
+- Memoria Ram: 16 GB
+- Video Card: AMD Rx 580 8 GB
+- Operating System: Windows 10
+
+## References
+- Hilbe, J.M. (2009). Logistic Regression Models (1st ed.). Chapman and Hall/CRC. https://doi.org/10.1201/9781420075779
+- A. R. Statistical properties of artificial neural networks. In Proceedings of Conference on Decision and Control (1989).
+- ESIC. (2018). Apache Spark: Introducción, qué es y cómo funciona. January 10, 2021, de ESIC
+- Scala. (2021). Introducción | Scala Documentation. January 10, 2021, de The Scala Programming Language
+- Carl Kingsford and Steven L Salzberg. (2008). What are decision trees?. January 10, 2021, de National Center for Biotechnology Information
