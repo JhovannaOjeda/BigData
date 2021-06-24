@@ -82,5 +82,9 @@ In this Decision Tree method, the first run takes more time, its time was 14 sec
 #### Average
 ![image](https://user-images.githubusercontent.com/60414135/123190380-4b43ad80-d454-11eb-9fc4-84da5d968789.png)
 
+## Conclusions
 
+### Jhovanna
 
+### Daniel
+It can be observed that the results of the assertiveness and error in the 4 methods were very similar varying between very low percentage and as for the percentage of error they coincide in the same way, in spite of being different processes and that it has been run in different equipment that did not affect so much as far as the optimization of the code in its execution.
