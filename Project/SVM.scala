@@ -1,4 +1,4 @@
-```scala
+
 //Start timer
 val startTimeMillis = System.currentTimeMillis()
 
@@ -72,4 +72,4 @@ val Seconds = (endTimeMillis - startTimeMillis) / 1000
 
 //Print the time in seconds that took the whole algorithm to compile
 println(Seconds)
-```
+
