@@ -107,12 +107,12 @@ It can be observed that the results of the assertiveness and error in the 4 meth
 
 ### Jhovanna
 - Processor: intel i3-2330M 2.20GHz
-- Memoria Ram: 4 GB
+- Ram: 4 GB
 - Operating System: Windows 10
 
 ### Daniel
 - Processor: intel i5-7500 3.40 GHz
-- Memoria Ram: 16 GB
+- Ram: 16 GB
 - Video Card: AMD Rx 580 8 GB
 - Operating System: Windows 10
 
