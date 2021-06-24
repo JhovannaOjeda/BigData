@@ -84,12 +84,14 @@ In this Decision Tree method, the first run takes more time, its time was 14 sec
 ![image](https://user-images.githubusercontent.com/60414135/123190380-4b43ad80-d454-11eb-9fc4-84da5d968789.png)
 
 ### Logistic Regression
+In the Logistic Regression method, in every loop we got se same accuracy and error, what might say than the algoritm it's very exact on his steps.
 ![image](https://user-images.githubusercontent.com/63790039/123191827-abd3ea00-d456-11eb-86f7-e1b8b01360f3.png)
 
 #### Average
 ![image](https://user-images.githubusercontent.com/63790039/123191933-d45be400-d456-11eb-8638-7d353770341c.png)
 
 ### Multilayer Perceptron Classifier
+In the Logistic Regression method, It repeats the accuracy, this can say than there's not much difference in the repetitions.
 ![image](https://user-images.githubusercontent.com/63790039/123192060-079e7300-d457-11eb-8cd2-c3d2ffe3bb19.png)
 
 #### Average
